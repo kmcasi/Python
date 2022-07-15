@@ -85,6 +85,11 @@ class Example:
 
 # RUN
 if __name__ == "__main__":
+    import os
+    
+    # Provide a default terminal title
+    os.system("TITLE Example // Keyboard and mouse")
+    
     test = Example()
     # Wait until no any events are listening
     while test.IsRunning(): pass
