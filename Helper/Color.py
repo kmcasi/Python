@@ -4,11 +4,12 @@ class Color:
     
     Example of usage:
     
-    >>> Color.rgb2hex(255)                  #FFFFFFFF
-    >>> Color.rgb2hex(255, alpha=False)     #FFFFFF
-    >>> Color.hex2rgb("FFF")                #(255, 255, 255, 255)
-    >>> Color.hex2rgb("FFC04080")           #(255, 192, 64, 128)
-    >>> Color.hex2rgb("FFF", alpha=False)   #(255, 255, 255)
+    >>> Color.rgb2hex(255)                  # FFFFFFFF
+    >>> Color.rgb2hex(255, alpha=False)     # FFFFFF
+    >>> Color.rgb2hex(255, 192, 64, 128)    # FFC04080
+    >>> Color.hex2rgb("FFF")                # (255, 255, 255, 255)
+    >>> Color.hex2rgb("FFC04080")           # (255, 192, 64, 128)
+    >>> Color.hex2rgb("FFF", alpha=False)   # (255, 255, 255)
     """
     @staticmethod
     def rgb2hex(*color: int, alpha: bool = True) -> str:
