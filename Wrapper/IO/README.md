@@ -7,6 +7,6 @@
 # Example preview
 
 <!-- Keyboard and mouse -->
-> ### [:keyboard::computer_mouse: Keyboard and mouse](https://github.com/kmcasi/Python_Mix/blob/main/IO/example_keybo_mouse.py)
+> ### [:keyboard::computer_mouse: Keyboard and mouse](example/Keyboard_mouse.py)
 > ![example_keyboard_mouse](preview/preview_example_keyboard_mouse.png)
 
