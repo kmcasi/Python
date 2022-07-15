@@ -10,11 +10,6 @@
 #// 
 #// Also that is the reason why I created Keyboard and Mouse classes.
 #// 
-#// pynput is requred
-#//     pip install pynput
-#// pyperclip is required
-#//     pip install pyperclip
-#// 
 #// colorama and progress are just for visual effects.
 
 #// IMPORT
