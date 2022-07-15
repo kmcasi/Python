@@ -24,7 +24,7 @@ except ModuleNotFoundError as e:
         file = str(e.name).rsplit(".", 1)[1]
         message = f"If you downloaded the '{file}.py' from github then, " \
                   f"modify the path '{e.name}' to match your project structure.\n" \
-                  f"Otherwise you can find it on: https://github.com/kmcasi/Python_Mix/blob/main/IO/lib/{file}.py"
+                  f"Otherwise you can find it on: https://github.com/kmcasi/Python/blob/main/Wrapper/IO/lib/{file}.py"
         raise ModuleNotFoundError(message).with_traceback(sys.exc_info()[2])
 
 try:
