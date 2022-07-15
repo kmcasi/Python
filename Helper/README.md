@@ -31,3 +31,15 @@ The main usage of it will have different resoults base on founded libraries. Wha
     myFont.get_width_of("Z")    # kivy:13, pillow:13, tkinter:15
     myFont.get_height_of("Z")   # kivy:26, pillow:20, tkinter:27
     myFont.get_size_of("Z")     # tuple(width, height) with the values from above
+
+<!-- List -->
+## [List](List.py)
+List purpose is to return a list of elements. You can provide and unpair values like from 3 values get out 4. Are no any restriction for the amount provided values and the output ones.
+
+Accepted values and the return type are: int, float, str, bool.
+
+    List(3)                             # [3, 3, 3, 3]
+    List(1, 2.3, _type=float)           # [1.0, 2.3, 1.0, 2.3]
+    List(0.6, "a", False, _len=5)       # [1, 97, 0, 1, 97]
+    List(0.3, "z", _len=2, _type=bool)  # [False, True]
+    List(0.3, 2, True, "a", _type=str)  # ['0.3', '2', 'True', 'a']
