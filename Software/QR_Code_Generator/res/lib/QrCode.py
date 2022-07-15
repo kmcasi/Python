@@ -82,7 +82,7 @@ class Common:
 class Export(Common):
     def __init__(self):
         super().__init__()
-        self.signature: str = "QRCode <https://github.com/kmcasi/Python/Software/QR_Code_Generator>"
+        self.signature: str = "QRCode <https://github.com/kmcasi/Python/tree/main/Software/QR_Code_Generator>"
 
     def PNG(self, file: str = "", show: bool = False, alpha: int = 0) -> None:
         """**Portable Network Graphic** (PNG)
