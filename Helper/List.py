@@ -3,7 +3,7 @@ def List(*values:any, _len:int=4, _type:type=int) -> list:
     """**List** purpose is to return a list of elements.
     You can provide and unpair values like from 3 values get out 4.
 
-    Main reaso was because kivy *VariableListProperty* had not worked for me for some reasons ``\(-_-)/``.
+    Main reason was because kivy *VariableListProperty* had not worked for me for some reasons ``\(-_-)/``.
 
     Accepted values and the return type are: int, float, str, bool.
     See extreme example below:
