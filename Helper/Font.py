@@ -1,6 +1,3 @@
-#// IMPORT
-from typing import Final
-
 #// LOGIC
 class Font:
     def __init__(self, font_name:str, font_size:int):
@@ -10,8 +7,6 @@ class Font:
         Example usage:
 
         >>> myFont = Font("comic", 18)
-        >>> myFont.name                 # 'comic'
-        >>> myFont.size                 # 18
         >>> myFont.get_width_of("Z")    # 13
         >>> myFont.get_height_of("Z")   # 26
         >>> myFont.get_size_of("Z")     # (13, 26)
@@ -20,8 +15,8 @@ class Font:
         :param font_size:   Font size as an integer
         """
         # Local variables
-        self.name:Final[str] = font_name
-        self.size:Final[int] = font_size
+        self._name:str = font_name
+        self._size:int = font_size
 
     def get_size_of(self, sample:str="W") -> tuple[int, int]:
         """Measuring the sample size.
@@ -54,14 +49,14 @@ class Font:
         try:
             # Using kivy Label to render the sample and extracting the size of it.
             from kivy.uix.label import Label
-            font = Label(text=sample, font_name=self.name, font_size=self.size)
+            font = Label(text=sample, font_name=self._name, font_size=self._size)
             font.texture_update()
             return tuple(font.texture_size)
         except ModuleNotFoundError:
             try:
                 # Using pillow to extract the size of it.
                 from PIL import ImageFont
-                font = ImageFont.truetype(self.name, self.size)
+                font = ImageFont.truetype(self._name, self._size)
                 _, descent = font.getmetrics()
                 width = font.getmask(sample).getbbox()[2]
                 height = font.getmask(sample).getbbox()[3] + descent
@@ -71,7 +66,7 @@ class Font:
                 from tkinter import Tk, Label
                 from tkinter.font import Font
                 root = Tk()
-                font = Font(root, family=self.name, size=self.size)
+                font = Font(root, family=self._name, size=self._size)
                 width = font.measure(sample)
                 height = font.metrics("linespace", displayof=root)
                 root.destroy()
