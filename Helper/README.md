@@ -26,11 +26,11 @@ Font main purpose is to measure the size of a font single letter. But you can me
     myFont.name     # 'comic'
     myFont.size     # 18
 
-The main usage of it will have different resoults base on founded libraries. What I mean is, font size will be measured by [kivy](https://kivy.org), if you do not have it then will pe measured with [pillow](https://pillow.readthedocs.io/en/stable/), if you do not have it to, then with tkinter witch is come with python by default.
+The main usage of it will have different resoults base on founded libraries. What I mean is, font size will be measured by [kivy](https://kivy.org), if you do not have it then will pe measured with [pillow](https://pillow.readthedocs.io/en/stable/), if you do not have it to, then with tkinter witch is come with python by default. Pillow is the only one who messure the height base on the sample.
 
-    myFont.get_width_of("Z")    # kivy:13, pillow:13, tkinter:15
-    myFont.get_height_of("Z")   # kivy:26, pillow:20, tkinter:27
-    myFont.get_size_of("Z")     # tuple(width, height) with the values from above
+    myFont.get_width_of("AQj")    # kivy:36, pillow:35, tkinter:40
+    myFont.get_height_of("AQj")   # kivy:26, pillow:25, tkinter:27
+    myFont.get_size_of("AQj")     # tuple(width, height) with the values from above
 
 <!-- List -->
 ## [List](List.py)
