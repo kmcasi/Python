@@ -22,7 +22,7 @@ Color is a helper to convert colors. For now is supporting only RGB and HEX. If 
 ## [Font](Font.py)
 Font main purpose is to measure the size of a font single letter. But you can measure and an entire message(string) on multi lines.
 
-The size will have different resoults base on founded libraries. What I mean is, font size will be measured by [kivy](https://kivy.org), if you do not have it then will pe measured with [pillow](https://pillow.readthedocs.io/en/stable/), if you do not have it to, then with tkinter witch is come with python by default. Pillow is the only one who messure the height base on the sample.
+The size will have different resoults base on founded libraries. What I mean is, font size will be measured by [kivy](https://kivy.org), if you do not have it then will pe measured with [pillow](https://pillow.readthedocs.io/en/stable/), if you do not have it to, then with tkinter witch is come with python by default. Pillow is the only one who really measure the height base on the provided sample.
 
     myFont = Font("comic", 18)
     myFont.get_width_of("AQj")    # kivy:36, pillow:35, tkinter:40
