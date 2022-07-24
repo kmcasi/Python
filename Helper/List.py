@@ -35,7 +35,7 @@ def List(*values:any, _len:int=4, _type:type=int) -> list:
 
                 out.append(_type(value))
 
-                if len(out) == _len: keep = False; break
+                if len(out) == _len: keep = False
             except Exception as e: raise Exception(e)
 
     return out
