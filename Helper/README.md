@@ -36,12 +36,14 @@ Just if is necessary you can get and change the main values of it.
 
 <!-- List -->
 ## [List](List.py)
-List purpose is to return a list of elements. You can provide and unpair values like from 3 values get out 4. Are no any restriction for the amount provided values and the output ones.
+List purpose is to return a list of elements. You can provide and unpair values like from 3 values get out 4. Are no any restriction for the amount provided values and the output ones. Also the main benefits of this class is the extra futures list class.
 
-Accepted values and the return type are: int, float, str, bool.
+Also accept `+, -, *, /, //, **, %, ==, !=, <, <=, >, >=, in, not in`
 
-    List(3)                             # [3, 3, 3, 3]
-    List(1, 2.3, _type=float)           # [1.0, 2.3, 1.0, 2.3]
-    List(0.6, "a", False, _len=5)       # [1, 97, 0, 1, 97]
-    List(0.3, "z", _len=2, _type=bool)  # [False, True]
-    List(0.3, 2, True, "a", _type=str)  # ['0.3', '2', 'True', 'a']
+Accepted values and the return type are: int, float.
+
+    myList = List(size=4, _type=int)
+    myList.value = [3, 5]
+    print(myList.value)                 # [3, 5, 3, 5]
+    
+    # Extra documentation will come tomorrow
