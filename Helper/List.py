@@ -2,7 +2,6 @@
 from typing import Final
 from builtins import abs
 from logging import error, warning
-from sys import exit
 
 
 #// LOGIC
@@ -34,7 +33,7 @@ class List:
         try:
             for index in range(self.size):
                 value = values[index % len(values)]
-                if type(value) in self.__supportedType: self.__items.append(value)
+                if type(value) in self.__supportedType: self.__items.append(self.type(value))
                 else: raise TypeError
 
         except TypeError: self.__error_type("initialization")
@@ -122,7 +121,7 @@ class List:
             elif type(power) is dict: power = list(power.values())
 
             # If is a list
-            if type(power) in [list, tuple]:
+            if isinstance(power, (list, tuple)):
                 # In case the size is not the same, raise an :class:`python.builtins.IndexError`
                 if len(power) != self.size: raise IndexError
 
@@ -161,7 +160,7 @@ class List:
             elif type(power) is dict: power = list(power.values())
 
             # If is a list
-            if type(power) in [list, tuple]:
+            if isinstance(power, (list, tuple)):
                 # In case the size is not the same, raise an :class:`python.builtins.IndexError`
                 if len(power) != self.size: raise IndexError
 
@@ -217,7 +216,7 @@ class List:
             elif type(other) is dict: other = list(other.values())
 
             # If is a list
-            if type(other) in [list, tuple]:
+            if isinstance(other, (list, tuple)):
                 # In case the size is not the same, raise an :class:`python.builtins.IndexError`
                 if len(other) != self.size: raise IndexError
 
@@ -249,7 +248,7 @@ class List:
             elif type(other) is dict: other = list(other.values())
 
             # If is a list
-            if type(other) in [list, tuple]:
+            if isinstance(other, (list, tuple)):
                 # In case the size is not the same, raise an :class:`python.builtins.IndexError`
                 if len(other) != self.size: raise IndexError
 
@@ -281,7 +280,7 @@ class List:
             elif type(other) is dict: other = list(other.values())
 
             # If is a list
-            if type(other) in [list, tuple]:
+            if isinstance(other, (list, tuple)):
                 # In case the size is not the same, raise an :class:`python.builtins.IndexError`
                 if len(other) != self.size: raise IndexError
 
@@ -322,7 +321,7 @@ class List:
             elif type(other) is dict: other = list(other.values())
 
             # If is a list
-            if type(other) in [list, tuple]:
+            if isinstance(other, (list, tuple)):
                 # In case the size is not the same, raise an :class:`python.builtins.IndexError`
                 if len(other) != self.size: raise IndexError
 
@@ -350,7 +349,7 @@ try:
     if type(other) is set: other = list(other)
     elif type(other) is dict: other = list(other.values())
     
-    if type(other) in [list, tuple]:
+    if isinstance(other, (list, tuple)):
         if len(other) != self.size: raise IndexError
         
         for index in range(self.size):
@@ -376,7 +375,7 @@ try:
     if type(other) is set: other = list(other)
     elif type(other) is dict: other = list(other.values())
     
-    if type(other) in [list, tuple]:
+    if isinstance(other, (list, tuple)):
         if len(other) != self.size: raise IndexError
         
         for index in range(self.size):
@@ -398,19 +397,9 @@ except IndexError: self._{self.__class__.__name__}__error_index("{info}")
         return result
 
     def __error_type(self, info:str) -> None:
-        from traceback import print_stack
-
-        print_stack(limit=-1)
-        error(f"{self.__class__.__name__}:[{info.capitalize()}] {self.__arrow} Can operate only with "
+        raise TypeError(f"{self.__class__.__name__}:[{info.capitalize()}] {self.__arrow} Can operate only with "
               f"{self.__supportedType_text}.")
 
-        exit()
-
     def __error_index(self, info:str) -> None:
-        from traceback import print_stack
-
-        print_stack(limit=-1)
-        error(f"{self.__class__.__name__}:[{info.capitalize()}] {self.__arrow} Can operate only with "
+        raise TypeError(f"{self.__class__.__name__}:[{info.capitalize()}] {self.__arrow} Can operate only with "
               f"lists of the same size.")
-
-        exit()
