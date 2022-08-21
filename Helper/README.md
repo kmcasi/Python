@@ -75,6 +75,7 @@ print(myList // standard_set)   # [3, -3, 1, -2]
 print(myList ** standard_dict)  # [3, 25, 27, 625]
 
 print(myList < one_value)      # True
+print(one_value not in myList) # False
 
 # Find which values are intersecting.
 print(myList.intersect(standard_list))  # [3]
