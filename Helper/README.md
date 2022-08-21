@@ -36,14 +36,43 @@ Just if is necessary you can get and change the main values of it.
 
 <!-- List -->
 ## [List](List.py)
-List purpose is to return a list of elements. You can provide and unpair values like from 3 values get out 4. Are no any restriction for the amount provided values and the output ones. Also the main benefits of this class is the extra futures list class.
+```python3
+    myList = List(*values:int|float, size:int=4, _type:type=int)
+```
+List purpose is to help on list common mathematical operations and comparison. 
 
-Also accept `+, -, *, /, //, **, %, ==, !=, <, <=, >, >=, in, not in`
+You can provide and unpair values like from 3 values get out 4. Are no any restriction for the amount provided values and the output ones.
 
-Accepted values and the return type are: int, float.
+The mathematical operations and comparison can be done only with `int` and `float`.
 
-    myList = List(size=4, _type=int)
-    myList.value = [3, 5]
-    print(myList.value)                 # [3, 5, 3, 5]
-    
-    # Extra documentation will come tomorrow
+It also accept `list`, `tuple`, `set` and `dict`, but the values of them must be `float` or `int`.
+
+- Supported mathematical operations: `+`, `-`, `*`, `/`, `//`, `**`, `%`, `+=`, `-=`, `*=`, `/=`, `//=`, `**=` and `%=`.
+- Supported comparison: `==`, `!=`, `<`, `<=`, `>`, `>=`, `in` and `not in`.
+- Supported extra: `len()`, `round()`, `str()`, `__int__()`, `__float__()`, `abs()`, `pow()`, `floor()`, `ceil()`, `trunc()`, `reversed()`, `-List` and `+List`.
+
+Examples:
+```python3
+myList = List(3, -5, size=4, _type=int)
+
+standard_list:list = [1, 2, 3, 4]
+standard_tuple:tuple = (1, 2, 3, 4)
+standard_set:set = {1, 2, 3, 4}
+standard_dict:dict[str, int] = {"x":1, "y":2, "z":3, "w":4}
+one_value:int = 3
+
+print(myList)                   # [3, -5, 3, -5]
+print(-myList)                  # [-3, -5, -3, -5]
+print(+myList)                  # [3, 5, 3, 5]
+
+print(myList + one_value)       # [6, -2, 6, -2]
+print(myList - standard_list)   # [2, -7, 0, -9]
+print(myList * standard_tuple)  # [3, -10, 9, -20]
+print(myList // standard_set)   # [3, -3, 1, -2]
+print(myList ** standard_dict)  # [3, 25, 27, 625]
+
+print(myList < one_value)      # True
+
+# Find which values are intersecting.
+print(myList.intersect(standard_list))  # [3]
+```
