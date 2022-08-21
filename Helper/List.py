@@ -1,6 +1,3 @@
-# Extracted from my general list logic witch have support for string and boolean also.
-# https://github.com/kmcasi/Python/tree/main/Helper#list
-
 #// IMPORT
 from typing import Final
 from builtins import abs
