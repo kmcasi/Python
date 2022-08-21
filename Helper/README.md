@@ -56,7 +56,8 @@ It also accept `list`, `tuple`, `set` and `dict`, but the values of them must be
 
 Examples:
 ```python3
-myList = List(3, -5, size=4, _type=int)
+# myList = List(3, -5, size=4, _type=int)
+myList = List(3, -5)
 
 standard_list:list = [1, 2, 3, 4]
 standard_tuple:tuple = (1, 2, 3, 4)
